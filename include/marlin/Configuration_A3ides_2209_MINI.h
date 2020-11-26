@@ -387,7 +387,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 240 // 290 + 15
+#define HEATER_0_MAXTEMP 240 + 15 // 290 + 15
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -681,7 +681,7 @@
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 280 } //E0 280 295
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
-    { 100, 100, 200, 325 } //E0 280 295
+    { 100, 100, 200, 415 } //E0 280 295
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 3200, 1120 } //E0 280 295
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 1120 } //E0 280 295
 
@@ -691,7 +691,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
 #define DEFAULT_MAX_FEEDRATE \
-    { 180, 180, 12, 80 }
+    { 180, 180, 12, 40 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -865,7 +865,7 @@
     { -29, -3, 0 }
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 5
+#define MIN_PROBE_EDGE 10
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 5000
@@ -958,7 +958,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -992,7 +992,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 185
+#define Z_MAX_POS 150
 
 /**
  * Software Endstops
@@ -1321,11 +1321,14 @@
 
     //#define SKEW_CORRECTION_FOR_Z
     #if ENABLED(SKEW_CORRECTION_FOR_Z)
-        #define XZ_DIAG_AC 282.8427124746
-        #define XZ_DIAG_BD 282.8427124746
-        #define YZ_DIAG_AC 282.8427124746
-        #define YZ_DIAG_BD 282.8427124746
-        #define YZ_SIDE_AD 200
+        #define XZ_DIAG_AC 139.47 // 282.8427124746
+        #define XZ_DIAG_BD 141.45 // 282.8427124746
+        #define XZ_SIDE_AD 100    // 200
+
+        #define YZ_DIAG_AC 139.35 // 282.8427124746
+        #define YZ_DIAG_BD 141.45 // 282.8427124746
+        #define YZ_SIDE_AD 99.83  // 200
+
         #define XZ_SKEW_FACTOR 0.0
         #define YZ_SKEW_FACTOR 0.0
     #endif

@@ -5,7 +5,7 @@
 // axis length [mm] - PRINTER MINI
 #define X_LEN 184
 #define Y_LEN 183
-#define Z_LEN 186
+#define Z_LEN 150 // 186
 
 // tolerance (common for all axes)
 #define LEN_TOL_ABS 15 // length absolute tolerance (+-5mm)
