@@ -441,10 +441,10 @@
     //#define DEFAULT_Ki 1.07
     //#define DEFAULT_Kd 45.43
 
-    // Prusa MINI
-    #define DEFAULT_Kp 7.00
-    #define DEFAULT_Ki 0.50
-    #define DEFAULT_Kd 45.00
+    // Prusa 
+    #define DEFAULT_Kp 12.00
+    #define DEFAULT_Ki 0.63
+    #define DEFAULT_Kd 57.61
 
 // MakerGear
 //#define DEFAULT_Kp 7.0
